@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boloss</title>
+</head>
+<body>
+    <input type="number" class="getGrade" min="0" max="20">
+    <button class="getComment" type="button">Get Value</button>
+    <script>
+    const getComment = document.querySelector('.getComment')
+    function getRandom(){
+        random = Math.floor(Math.random() * 2);
+        return random
+        }
+    function getInputValue() {
+        let inputVal = document.querySelector('.getGrade').value;
+        
+        if(inputVal < 5){
+            const lowerArray = [
+                "Travail très irrégulier. Implication très faible en classe. L'attitude laisse à désirer.",
+                "Travail très irrégulier. Implication très faible en classe; c'est dommage.",
+                "Les efforts son irréguliers. L'attitude en classe laisse souvent à désirer (bavardages réguliers, notamment)."
+            ]
+            alert(lowerArray[getRandom()])
+            
+        }
+        else if (inputVal >=5 && inputVal < 10){
+            const lowArray = [
+                "Niveau très fragile. Implication qui sait sporadiquement se montrer positive; les efforts doivent toutefois être plus intenses",
+                "Implication en classe et travail personnel qui semble assez irrégulier. Le niveau de langue est pourtant satisfaisant; il suffirait d'un petit effort pour avoir des résultats bien meilleurs.",
+                "Des gros efforts de travail et sur l'attitude pendant le trimestre pour surmonter les difficultés ont été notés. Poursuivez sur cette voie."
+            ]
+            alert(lowArray[getRandom()])
+        }
+        else if (inputVal >=10 && inputVal < 15){
+            const highArray = [
+                "Interventions en classe souvent de qualité et implication positive la plupart du temps.",
+                "Implication en dents de scie. Le niveau est plus que correct pourtant; mettez un peu de bonne volonté!",
+                "Bon ensemble; je suis persuadé que vous pouvez faire beaucoup mieux avec un peu plus de travail personnel et de concentration en classe!"
+            ]
+            alert(highArray[getRandom()])
+        }
+        else if (inputVal >=15){
+            const higherArray = [
+                "Ensemble excellent, tant sur le travail personnel que l'implication en classe. Continuez ainsi!",
+                "Ensemble extrêmement satisfaisant. Grande implication en classe, travail toujours fin et de qualité.",
+                "Excellent ensemble, travail régulier et sérieux."
+            ]
+            alert(higherArray[getRandom()])
+        }
+    }
+    getComment.addEventListener('click', ()=>{
+        getInputValue()
+    })
+    </script>
+</html>
